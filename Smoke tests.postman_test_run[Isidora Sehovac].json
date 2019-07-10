@@ -1,0 +1,456 @@
+{
+	"id": "2d3b19fc-039c-4467-a20d-bfdd3bef99e4",
+	"name": "Smoke tests",
+	"allTests": [],
+	"timestamp": "2019-07-10T11:22:47.281Z",
+	"collection_id": "fa529d8e-d851-4499-98ce-a7f8a30b7451",
+	"folder_id": "a03674c2-08b9-4b50-b518-c86f0bdeaf9c",
+	"target_type": "folder",
+	"environment_id": "73b90635-d1b8-476c-81c9-a29fe3f47dbf",
+	"data": [],
+	"delay": 150,
+	"count": 3,
+	"collection": {
+		"id": "fa529d8e-d851-4499-98ce-a7f8a30b7451",
+		"name": "Geocoding ",
+		"description": "",
+		"auth": null,
+		"events": null,
+		"variables": [],
+		"order": [],
+		"folders_order": [
+			"74e00f00-6621-444d-b281-c913a642e161",
+			"97876149-811e-4157-b53c-673bddac6813",
+			"a03674c2-08b9-4b50-b518-c86f0bdeaf9c"
+		],
+		"owner": "7867225",
+		"favorite": false,
+		"isFavorite": true
+	},
+	"folder": {
+		"id": "a03674c2-08b9-4b50-b518-c86f0bdeaf9c",
+		"name": "Smoke tests",
+		"description": "",
+		"auth": null,
+		"events": null,
+		"collection": "fa529d8e-d851-4499-98ce-a7f8a30b7451",
+		"folder": null,
+		"order": [
+			"a47698b1-4702-4964-a062-749e2ceac627",
+			"7632bdda-b169-443a-b10c-80aba25cbcf0",
+			"09a444a2-d900-4fc5-9c2d-77b8f5504fc9",
+			"4a507f2f-ddff-48d8-bf82-f0d1035a9a6e",
+			"d02fa81f-16c7-4ed1-bf46-c3baa4430229"
+		],
+		"folders_order": [],
+		"type": "folder",
+		"depth": 1
+	},
+	"environment": null,
+	"globals": [
+		{
+			"key": "key",
+			"value": "ed7531299add9ecffa1a4bb4609115b3",
+			"enabled": false
+		},
+		{
+			"key": "token",
+			"value": "809067bfde738eb67c889c3129d026c17cbdb1ed1cfe56d34898573518b9d6c6",
+			"enabled": false
+		},
+		{
+			"key": "boardId1",
+			"value": "5d152b352ce2555ff14f55f8",
+			"enabled": false
+		},
+		{
+			"key": "token7",
+			"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6ImZkZDM3MWJhNTE1NmI5NWUzMGY5MTFhZjhjZmM1YzA1YmJlZmI1NGM1NjNiMGIxYmFjZjgzOWIxZWU4ZjI3ZDgifQ.eyJpc3MiOiJyYWlsc19hcGlfdGVtcGxhdGUiLCJpYXQiOjE1NjIyNTMwNDksImp0aSI6ImQ1Y2U1MDIzLTEzMGMtNDRiMC1iYmVhLTlmZGIwOTY5ZWVkMCIsInVzZXIiOnsiaWQiOjMsImVtYWlsIjoiaWtyZHphbGljQGdtYWlsLmNvbSJ9fQ.W81F_5Gkf8jUyXo-NcvyF3OfuGoTTyTjydOFoI9KQNmsw5BRfTbV-ntRgYoEG2PmHZWuHEusyzIyIwE3Uk9aBA",
+			"enabled": true
+		},
+		{
+			"key": "url",
+			"value": "http://leprechaun-stage.herokuapp.com",
+			"enabled": true
+		},
+		{
+			"key": "token8",
+			"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6ImZkZDM3MWJhNTE1NmI5NWUzMGY5MTFhZjhjZmM1YzA1YmJlZmI1NGM1NjNiMGIxYmFjZjgzOWIxZWU4ZjI3ZDgifQ.eyJpc3MiOiJyYWlsc19hcGlfdGVtcGxhdGUiLCJpYXQiOjE1NjIyNjE5NjAsImp0aSI6IjdhMmEzZTI3LWI3YWQtNDFmMC1hOGY0LTc2YTAxOTA3OTc2YSIsInVzZXIiOnsiaWQiOjExOSwiZW1haWwiOiJkb3JhYWxlaysxOEBnbWFpbC5jb20ifX0.MFWp8oIiw99HBC9P5_htSxVCRkmm0lsM7npnPVVoh0vTBy4jCQXQ04nQvqt0M45it5ZoTbEZHX4F0mmri0kcjA",
+			"enabled": true
+		}
+	],
+	"results": [
+		{
+			"name": "Smoke test (GC001)",
+			"id": "a47698b1-4702-4964-a062-749e2ceac627",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 800ms": true,
+				"Smoke test": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 3,
+					"fail": 0
+				},
+				"Response time is less than 800ms": {
+					"pass": 3,
+					"fail": 0
+				},
+				"Smoke test": {
+					"pass": 3,
+					"fail": 0
+				}
+			},
+			"times": [
+				"452",
+				"83",
+				"81"
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 800ms": true,
+					"Smoke test": true
+				},
+				{
+					"Status code is 200": true,
+					"Response time is less than 800ms": true,
+					"Smoke test": true
+				},
+				{
+					"Status code is 200": true,
+					"Response time is less than 800ms": true,
+					"Smoke test": true
+				}
+			],
+			"time": "81",
+			"totalRequestTime": 616,
+			"iterationResults": {}
+		},
+		{
+			"name": "Smoke test (GC006)",
+			"id": "7632bdda-b169-443a-b10c-80aba25cbcf0",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"Content-Type is present": true,
+				"Response time is less than 200ms": true
+			},
+			"testPassFailCounts": {
+				"Content-Type is present": {
+					"pass": 3,
+					"fail": 0
+				},
+				"Response time is less than 200ms": {
+					"pass": 3,
+					"fail": 0
+				}
+			},
+			"times": [
+				"85",
+				"86",
+				"88"
+			],
+			"allTests": [
+				{
+					"Content-Type is present": true,
+					"Response time is less than 200ms": true
+				},
+				{
+					"Content-Type is present": true,
+					"Response time is less than 200ms": true
+				},
+				{
+					"Content-Type is present": true,
+					"Response time is less than 200ms": true
+				}
+			],
+			"time": "88",
+			"totalRequestTime": 259,
+			"iterationResults": {}
+		},
+		{
+			"name": "Smoke test (GC013)",
+			"id": "09a444a2-d900-4fc5-9c2d-77b8f5504fc9",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"Your test name": true
+			},
+			"testPassFailCounts": {
+				"Your test name": {
+					"pass": 3,
+					"fail": 0
+				}
+			},
+			"times": [
+				"92",
+				"86",
+				"71"
+			],
+			"allTests": [
+				{
+					"Your test name": true
+				},
+				{
+					"Your test name": true
+				},
+				{
+					"Your test name": true
+				}
+			],
+			"time": "71",
+			"totalRequestTime": 249,
+			"iterationResults": {}
+		},
+		{
+			"name": "Smoke test (GC016)",
+			"id": "4a507f2f-ddff-48d8-bf82-f0d1035a9a6e",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"Response time is less than 100ms": true,
+				"Your test name": true
+			},
+			"testPassFailCounts": {
+				"Response time is less than 100ms": {
+					"pass": 3,
+					"fail": 0
+				},
+				"Your test name": {
+					"pass": 3,
+					"fail": 0
+				}
+			},
+			"times": [
+				"88",
+				"88",
+				"83"
+			],
+			"allTests": [
+				{
+					"Response time is less than 100ms": true,
+					"Your test name": true
+				},
+				{
+					"Response time is less than 100ms": true,
+					"Your test name": true
+				},
+				{
+					"Response time is less than 100ms": true,
+					"Your test name": true
+				}
+			],
+			"time": "83",
+			"totalRequestTime": 259,
+			"iterationResults": {}
+		},
+		{
+			"name": "Smoke test (GS031)",
+			"id": "d02fa81f-16c7-4ed1-bf46-c3baa4430229",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"tests": {
+				"Status code is 200": false,
+				"Smoke test": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 0,
+					"fail": 3
+				},
+				"Smoke test": {
+					"pass": 3,
+					"fail": 0
+				}
+			},
+			"times": [
+				"55",
+				"74",
+				"54"
+			],
+			"allTests": [
+				{
+					"Status code is 200": false,
+					"Smoke test": true
+				},
+				{
+					"Status code is 200": false,
+					"Smoke test": true
+				},
+				{
+					"Status code is 200": false,
+					"Smoke test": true
+				}
+			],
+			"time": "54",
+			"totalRequestTime": 183,
+			"iterationResults": {}
+		}
+	],
+	"totalPass": 27,
+	"totalFail": 3,
+	"totalTime": 1566,
+	"lifecycle": "done",
+	"requests": [
+		{
+			"name": "Smoke test (GC001)",
+			"id": "a47698b1-4702-4964-a062-749e2ceac627",
+			"url": "https://maps.googleapis.com/maps/api/geocode/json?address=Milana Preloga 12A, Bosmal City Center, 71000 Sarajevo&key=AIzaSyAduI45QgLRByWTZmDmiaa-uc7wT6skMDo",
+			"time": "81",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 3,
+					"fail": 0
+				},
+				"Response time is less than 800ms": {
+					"pass": 3,
+					"fail": 0
+				},
+				"Smoke test": {
+					"pass": 3,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Smoke test (GC006)",
+			"id": "7632bdda-b169-443a-b10c-80aba25cbcf0",
+			"url": "https://maps.googleapis.com/maps/api/geocode/json?components=country:GB&key=AIzaSyAduI45QgLRByWTZmDmiaa-uc7wT6skMDo",
+			"time": "88",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"Content-Type is present": {
+					"pass": 3,
+					"fail": 0
+				},
+				"Response time is less than 200ms": {
+					"pass": 3,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Smoke test (GC013)",
+			"id": "09a444a2-d900-4fc5-9c2d-77b8f5504fc9",
+			"url": "https://maps.googleapis.com/maps/api/geocode/json?latlng=43.8519774,18.3866868&key=AIzaSyAduI45QgLRByWTZmDmiaa-uc7wT6skMDo",
+			"time": "71",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"Your test name": {
+					"pass": 3,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Smoke test (GC016)",
+			"id": "4a507f2f-ddff-48d8-bf82-f0d1035a9a6e",
+			"url": "https://maps.googleapis.com/maps/api/geocode/json?latlng=43.8519774,18.3866868&result_type=route&key=AIzaSyAduI45QgLRByWTZmDmiaa-uc7wT6skMDo",
+			"time": "83",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"Response time is less than 100ms": {
+					"pass": 3,
+					"fail": 0
+				},
+				"Your test name": {
+					"pass": 3,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Smoke test (GS031)",
+			"id": "d02fa81f-16c7-4ed1-bf46-c3baa4430229",
+			"url": "https://maps.googleapis.com/maps/api/geocode/json?latlng=&key=",
+			"time": "54",
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 0,
+					"fail": 3
+				},
+				"Smoke test": {
+					"pass": 3,
+					"fail": 0
+				}
+			}
+		}
+	],
+	"synced": false
+}

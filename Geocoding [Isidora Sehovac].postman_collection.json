@@ -1,0 +1,1423 @@
+{
+	"info": {
+		"_postman_id": "fa529d8e-d851-4499-98ce-a7f8a30b7451",
+		"name": "Geocoding ",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Forward geocoding",
+			"item": [
+				{
+					"name": "Full address request",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://maps.googleapis.com/maps/api/geocode/json?address=Milana Preloga 12A, Bosmal City Center, 71000 Sarajevo&key=AIzaSyAduI45QgLRByWTZmDmiaa-uc7wT6skMDo",
+							"protocol": "https",
+							"host": [
+								"maps",
+								"googleapis",
+								"com"
+							],
+							"path": [
+								"maps",
+								"api",
+								"geocode",
+								"json"
+							],
+							"query": [
+								{
+									"key": "address",
+									"value": "Milana Preloga 12A, Bosmal City Center, 71000 Sarajevo"
+								},
+								{
+									"key": "key",
+									"value": "AIzaSyAduI45QgLRByWTZmDmiaa-uc7wT6skMDo"
+								}
+							]
+						},
+						"description": "associated to test case GC001"
+					},
+					"response": []
+				},
+				{
+					"name": "Missing paremeters (address missing)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://maps.googleapis.com/maps/api/geocode/json?address=&key={{key}}",
+							"protocol": "https",
+							"host": [
+								"maps",
+								"googleapis",
+								"com"
+							],
+							"path": [
+								"maps",
+								"api",
+								"geocode",
+								"json"
+							],
+							"query": [
+								{
+									"key": "address",
+									"value": ""
+								},
+								{
+									"key": "key",
+									"value": "{{key}}"
+								}
+							]
+						},
+						"description": "Associated with test case GC002.\n\nMake an API call with missing parameters (address)\nResponse shows:\nerror message \"Invalid request. Missing the 'address', 'components', 'latlng' or 'place_id' parameter.\"\nstatus: \"INVALID_REQUEST\""
+					},
+					"response": []
+				},
+				{
+					"name": "Missing paremeters (address and key missing) ",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://maps.googleapis.com/maps/api/geocode/json?",
+							"protocol": "https",
+							"host": [
+								"maps",
+								"googleapis",
+								"com"
+							],
+							"path": [
+								"maps",
+								"api",
+								"geocode",
+								"json"
+							],
+							"query": [
+								{
+									"key": "address",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "key",
+									"value": "",
+									"disabled": true
+								}
+							]
+						},
+						"description": "Associated with test case GC003.\n\nMake an API call with missing parameters (address and key)\nResponse shows:\nerror message \"Invalid request. Missing the 'address', 'components', 'latlng' or 'place_id' parameter.\"\nstatus: \"INVALID_REQUEST\""
+					},
+					"response": []
+				},
+				{
+					"name": "Incomplete address",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://maps.googleapis.com/maps/api/geocode/json?address=Dabrobosa 2&key=AIzaSyAduI45QgLRByWTZmDmiaa-uc7wT6skMDo",
+							"protocol": "https",
+							"host": [
+								"maps",
+								"googleapis",
+								"com"
+							],
+							"path": [
+								"maps",
+								"api",
+								"geocode",
+								"json"
+							],
+							"query": [
+								{
+									"key": "address",
+									"value": "Dabrobosa 2"
+								},
+								{
+									"key": "key",
+									"value": "AIzaSyAduI45QgLRByWTZmDmiaa-uc7wT6skMDo"
+								}
+							]
+						},
+						"description": "Associated with test case GC004\nMake an API call with misspelled parameters (address)\nResponse shows:\n\"results\":\n\"status\": \"ZERO_RESULTS\""
+					},
+					"response": []
+				},
+				{
+					"name": "Invalid key",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://maps.googleapis.com/maps/api/geocode/json?address=Dabrobosanska 2  71000 Sarajevo BiH&key=AIzaSyAduI45QgLRByWTZmDmiaa-uc7wT6sk",
+							"protocol": "https",
+							"host": [
+								"maps",
+								"googleapis",
+								"com"
+							],
+							"path": [
+								"maps",
+								"api",
+								"geocode",
+								"json"
+							],
+							"query": [
+								{
+									"key": "address",
+									"value": "Dabrobosanska 2  71000 Sarajevo BiH"
+								},
+								{
+									"key": "key",
+									"value": "AIzaSyAduI45QgLRByWTZmDmiaa-uc7wT6sk"
+								}
+							]
+						},
+						"description": "Make an API call with invalid parameters (key)\nResponse shows:\n\"error_message\": \"The provided API key is invalid.\",\n\"results\": [],\n\"status\": \"REQUEST_DENIED\""
+					},
+					"response": []
+				},
+				{
+					"name": "Components request ",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://maps.googleapis.com/maps/api/geocode/json?components=country:GB&key={{key}}",
+							"protocol": "https",
+							"host": [
+								"maps",
+								"googleapis",
+								"com"
+							],
+							"path": [
+								"maps",
+								"api",
+								"geocode",
+								"json"
+							],
+							"query": [
+								{
+									"key": "components",
+									"value": "country:GB"
+								},
+								{
+									"key": "key",
+									"value": "{{key}}"
+								}
+							]
+						},
+						"description": "Associated to test case GC006.\n\nAPI call with parameters (components, API key), verify geographic coordinates (latitude and longitude) and status"
+					},
+					"response": []
+				},
+				{
+					"name": "Components request (invalid component)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://maps.googleapis.com/maps/api/geocode/json?components=country:G&key={{key}}",
+							"protocol": "https",
+							"host": [
+								"maps",
+								"googleapis",
+								"com"
+							],
+							"path": [
+								"maps",
+								"api",
+								"geocode",
+								"json"
+							],
+							"query": [
+								{
+									"key": "components",
+									"value": "country:G"
+								},
+								{
+									"key": "key",
+									"value": "{{key}}"
+								}
+							]
+						},
+						"description": "Associated with test case GC007.\n\nMake an API call with invalid parameters (components), verify:\n\"status\":\"ZERO_RESULTS\""
+					},
+					"response": []
+				},
+				{
+					"name": "Address and bounds request ",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://maps.googleapis.com/maps/api/geocode/json?bounds=34.172684,-118.604794|34.236144,-118.500938&key={{key}}&address=Winnetka",
+							"protocol": "https",
+							"host": [
+								"maps",
+								"googleapis",
+								"com"
+							],
+							"path": [
+								"maps",
+								"api",
+								"geocode",
+								"json"
+							],
+							"query": [
+								{
+									"key": "bounds",
+									"value": "34.172684,-118.604794|34.236144,-118.500938"
+								},
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "address",
+									"value": "Winnetka"
+								}
+							]
+						},
+						"description": "Associated with test case GC008.\n\nMake an API call with valid parameters (address, API key,bounds), verify geographic coordinates (latitude and longitude) and status (Status: OK)"
+					},
+					"response": []
+				},
+				{
+					"name": "Address and region request ",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://maps.googleapis.com/maps/api/geocode/json?address=Toledo&key={{key}}&region=ES",
+							"protocol": "https",
+							"host": [
+								"maps",
+								"googleapis",
+								"com"
+							],
+							"path": [
+								"maps",
+								"api",
+								"geocode",
+								"json"
+							],
+							"query": [
+								{
+									"key": "address",
+									"value": "Toledo"
+								},
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "region",
+									"value": "ES"
+								}
+							]
+						},
+						"description": "Associated with test case GC009.\n\nIn a API request, you can instruct the Geocoding service to return results biased to a particular region by using the region parameter."
+					},
+					"response": []
+				},
+				{
+					"name": "Components without address request",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://maps.googleapis.com/maps/api/geocode/json?components=route:Annankatu|administrative_area:Helsinki|country:Finland&key={{key}}",
+							"protocol": "https",
+							"host": [
+								"maps",
+								"googleapis",
+								"com"
+							],
+							"path": [
+								"maps",
+								"api",
+								"geocode",
+								"json"
+							],
+							"query": [
+								{
+									"key": "components",
+									"value": "route:Annankatu|administrative_area:Helsinki|country:Finland"
+								},
+								{
+									"key": "key",
+									"value": "{{key}}"
+								}
+							]
+						},
+						"description": "\nAssociated with test case GC010.\nYou can make valid queries without the address parameter, using the components filter"
+					},
+					"response": []
+				},
+				{
+					"name": "abbreviated address in request",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://maps.googleapis.com/maps/api/geocode/json?address=48 Pirrama Rd, Pyrmont, NSW, Australia&key=AIzaSyCv4YD_qh7AYcMfZtT75bVe7jczVYTtOGM",
+							"protocol": "https",
+							"host": [
+								"maps",
+								"googleapis",
+								"com"
+							],
+							"path": [
+								"maps",
+								"api",
+								"geocode",
+								"json"
+							],
+							"query": [
+								{
+									"key": "address",
+									"value": "48 Pirrama Rd, Pyrmont, NSW, Australia"
+								},
+								{
+									"key": "key",
+									"value": "AIzaSyCv4YD_qh7AYcMfZtT75bVe7jczVYTtOGM"
+								}
+							]
+						},
+						"description": "Associated with test case GC011.\n"
+					},
+					"response": []
+				},
+				{
+					"name": "partially entered address",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://maps.googleapis.com/maps/api/geocode/json?address=Dbrobosnska 2&key=AIzaSyAduI45QgLRByWTZmDmiaa-uc7wT6skMDo",
+							"protocol": "https",
+							"host": [
+								"maps",
+								"googleapis",
+								"com"
+							],
+							"path": [
+								"maps",
+								"api",
+								"geocode",
+								"json"
+							],
+							"query": [
+								{
+									"key": "address",
+									"value": "Dbrobosnska 2"
+								},
+								{
+									"key": "key",
+									"value": "AIzaSyAduI45QgLRByWTZmDmiaa-uc7wT6skMDo"
+								}
+							]
+						},
+						"description": "Associated with test case GC012."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reverse geocoding ",
+			"item": [
+				{
+					"name": "Latlng request",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}?latlng=43.8519774,18.3866868&key={{key}}",
+							"host": [
+								"{{url}}"
+							],
+							"query": [
+								{
+									"key": "latlng",
+									"value": "43.8519774,18.3866868"
+								},
+								{
+									"key": "key",
+									"value": "{{key}}"
+								}
+							]
+						},
+						"description": "Make an API call with valid parameters (longitude, latitude), verify addresses and status (Status: OK)"
+					},
+					"response": []
+				},
+				{
+					"name": "Latlng request Copy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}?latlng=43.8519774,18.3866868&key={{key}}",
+							"host": [
+								"{{url}}"
+							],
+							"query": [
+								{
+									"key": "latlng",
+									"value": "43.8519774,18.3866868"
+								},
+								{
+									"key": "key",
+									"value": "{{key}}"
+								}
+							]
+						},
+						"description": "Make an API call with valid parameters (longitude, latitude), verify addresses and status (Status: OK)"
+					},
+					"response": []
+				},
+				{
+					"name": "Latlng request (invalid latitude format)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}?latlng=!.8519774,18.3866868&key={{key}}",
+							"host": [
+								"{{url}}"
+							],
+							"query": [
+								{
+									"key": "latlng",
+									"value": "!.8519774,18.3866868"
+								},
+								{
+									"key": "key",
+									"value": "{{key}}"
+								}
+							]
+						},
+						"description": "  Associated with test case GC014.\n  \n  Make an API call with invalid parameters (invalid format longitude). Response: \n\"error_message\": \"Invalid request. Invalid 'latlng' parameter.\",\n    \"results\": [],\n    \"status\": \"INVALID_REQUEST\""
+					},
+					"response": []
+				},
+				{
+					"name": "Latlng request (invalid longitude request)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}?latlng=43.8519774,1@.3866868&key={{key}}",
+							"host": [
+								"{{url}}"
+							],
+							"query": [
+								{
+									"key": "latlng",
+									"value": "43.8519774,1@.3866868"
+								},
+								{
+									"key": "key",
+									"value": "{{key}}"
+								}
+							]
+						},
+						"description": "Associated with test case GC015.\n\nMake an API call with invalid parameters (invalid longitude format)"
+					},
+					"response": []
+				},
+				{
+					"name": "Latlng and result type request (street_address)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://maps.googleapis.com/maps/api/geocode/json?latlng=43.8519774,18.3866868&result_type=street_address&key={{key}}",
+							"protocol": "https",
+							"host": [
+								"maps",
+								"googleapis",
+								"com"
+							],
+							"path": [
+								"maps",
+								"api",
+								"geocode",
+								"json"
+							],
+							"query": [
+								{
+									"key": "latlng",
+									"value": "43.8519774,18.3866868"
+								},
+								{
+									"key": "location_type",
+									"value": "ROOFTOP",
+									"disabled": true
+								},
+								{
+									"key": "result_type",
+									"value": "street_address"
+								},
+								{
+									"key": "key",
+									"value": "{{key}}"
+								}
+							]
+						},
+						"description": "Make an API call with valid parameters (longitude, latitude, result type=street_address), verify street address and status (Status: OK)"
+					},
+					"response": []
+				},
+				{
+					"name": "Latlng and result_type request ",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}?latlng=43.8519774,18.3866868&key={{key}}&result_type=street_address&location_type=ROOFTOP",
+							"host": [
+								"{{url}}"
+							],
+							"query": [
+								{
+									"key": "latlng",
+									"value": "43.8519774,18.3866868"
+								},
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "result_type",
+									"value": "street_address"
+								},
+								{
+									"key": "location_type",
+									"value": "ROOFTOP"
+								}
+							]
+						},
+						"description": "Associated with test case GC016.\n\nMake an API call with valid parameters (longitude, latitude, result_type = street_addrees,location_type = ROOFTOP) verify street address and status (Status: OK)"
+					},
+					"response": []
+				},
+				{
+					"name": "Latlng intersection  request ",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}?latlng=43.8519774,18.3866868&key={{key}}&result_type=intersection ",
+							"host": [
+								"{{url}}"
+							],
+							"query": [
+								{
+									"key": "latlng",
+									"value": "43.8519774,18.3866868"
+								},
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "result_type",
+									"value": "intersection "
+								}
+							]
+						},
+						"description": "Associated with test case GC017.\n\nMake an API call with parameters (longitude, latitude, result type=intersection),\nResponse: (there is no intersection at this area)\n\"status\":\"ZERO_RESULTS\""
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieving a placeID ",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5f0d7af4-2345-47e8-b46b-5a92a9e4bea3",
+								"exec": [
+									"",
+									"    var jsonData = pm.response.json();",
+									"    ",
+									"    var id = jsonData.results[0].place_id;",
+									"    ",
+									"pm.environment.set(\"placeId\", id);",
+									"    "
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}?latlng=42.6499638,18.0936953&key={{key}}",
+							"host": [
+								"{{url}}"
+							],
+							"query": [
+								{
+									"key": "latlng",
+									"value": "42.6499638,18.0936953"
+								},
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "result_type",
+									"value": "park",
+									"disabled": true
+								}
+							]
+						},
+						"description": "Associated with test case GC029"
+					},
+					"response": []
+				},
+				{
+					"name": "Retreiving an address for a place ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}?place_id={{placeId}}&key={{key}}",
+							"host": [
+								"{{url}}"
+							],
+							"query": [
+								{
+									"key": "place_id",
+									"value": "{{placeId}}"
+								},
+								{
+									"key": "key",
+									"value": "{{key}}"
+								}
+							]
+						},
+						"description": "Associated with test case GC030."
+					},
+					"response": []
+				},
+				{
+					"name": "Latlng request (result_type: street address), invalid latlng",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}?latlng=,-73.961452&key={{key}}&result_type=street_address",
+							"host": [
+								"{{url}}"
+							],
+							"query": [
+								{
+									"key": "latlng",
+									"value": ",-73.961452"
+								},
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "result_type",
+									"value": "street_address"
+								}
+							]
+						},
+						"description": "Associated with test case GC018."
+					},
+					"response": []
+				},
+				{
+					"name": "Latlng request (result_type: invalid format) ",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}?latlng=40.714224,-73.961452&key={{key}}&result_type=o",
+							"host": [
+								"{{url}}"
+							],
+							"query": [
+								{
+									"key": "latlng",
+									"value": "40.714224,-73.961452"
+								},
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "result_type",
+									"value": "o"
+								}
+							]
+						},
+						"description": "Associated with test case GC019."
+					},
+					"response": []
+				},
+				{
+					"name": "Latlng request (result_type: administrative_area_level_1)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}?latlng=42.5495,18.281600000000026&key={{key}}&result_type=administrative_area_level_1",
+							"host": [
+								"{{url}}"
+							],
+							"query": [
+								{
+									"key": "latlng",
+									"value": "42.5495,18.281600000000026"
+								},
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "result_type",
+									"value": "administrative_area_level_1"
+								}
+							]
+						},
+						"description": "Associated with test case GC020."
+					},
+					"response": []
+				},
+				{
+					"name": "Latlng request (result_type: administrative_area_level_1) invalid result type value ",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}?latlng=42.5495,18.281600000000026&key={{key}}&result_type=administrative_area_level_",
+							"host": [
+								"{{url}}"
+							],
+							"query": [
+								{
+									"key": "latlng",
+									"value": "42.5495,18.281600000000026"
+								},
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "result_type",
+									"value": "administrative_area_level_"
+								}
+							]
+						},
+						"description": "Associated with test case GC021."
+					},
+					"response": []
+				},
+				{
+					"name": "Latlng request (result_type: administrative_area_level_2) ",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}?latlng=40.714224,-73.961452&key={{key}}&result_type=administrative_area_level_2",
+							"host": [
+								"{{url}}"
+							],
+							"query": [
+								{
+									"key": "latlng",
+									"value": "40.714224,-73.961452"
+								},
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "result_type",
+									"value": "administrative_area_level_2"
+								}
+							]
+						},
+						"description": "Associated with test case GC022."
+					},
+					"response": []
+				},
+				{
+					"name": "Latlng request (result_type: administrative_area_level_3) ",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}?latlng=48.8546,2.3477100000000064&key={{key}}&result_type=administrative_area_level_3",
+							"host": [
+								"{{url}}"
+							],
+							"query": [
+								{
+									"key": "latlng",
+									"value": "48.8546,2.3477100000000064"
+								},
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "result_type",
+									"value": "administrative_area_level_3"
+								}
+							]
+						},
+						"description": "Associated with test case GC023. \n\nindicates a third-order civil entity below the country level. This type indicates a minor civil division. Not all nations exhibit these administrative levels."
+					},
+					"response": []
+				},
+				{
+					"name": "Latlng and result_type = postal_code request",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}?latlng=48.8546,2.3477100000000064&key={{key}}&result_type=postal_code",
+							"host": [
+								"{{url}}"
+							],
+							"query": [
+								{
+									"key": "latlng",
+									"value": "48.8546,2.3477100000000064"
+								},
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "result_type",
+									"value": "postal_code"
+								}
+							]
+						},
+						"description": "Associated with test case GC024"
+					},
+					"response": []
+				},
+				{
+					"name": "Latlng and request type (neighborhood)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}?latlng=48.8546,2.3477100000000064&key={{key}}&result_type=neighborhood",
+							"host": [
+								"{{url}}"
+							],
+							"query": [
+								{
+									"key": "latlng",
+									"value": "48.8546,2.3477100000000064"
+								},
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "result_type",
+									"value": "neighborhood"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RANGE_INTERPOLATED",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}?latlng=48.8546,2.3477100000000064&key={{key}}&location_type=RANGE_INTERPOLATED",
+							"host": [
+								"{{url}}"
+							],
+							"query": [
+								{
+									"key": "latlng",
+									"value": "48.8546,2.3477100000000064"
+								},
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "location_type",
+									"value": "RANGE_INTERPOLATED"
+								}
+							]
+						},
+						"description": "Associated with test case GC025."
+					},
+					"response": []
+				},
+				{
+					"name": "ROOFTOP",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}?latlng=48.8546,2.3477100000000064&key={{key}}&location_type=ROOFTOP",
+							"host": [
+								"{{url}}"
+							],
+							"query": [
+								{
+									"key": "latlng",
+									"value": "48.8546,2.3477100000000064"
+								},
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "location_type",
+									"value": "ROOFTOP"
+								}
+							]
+						},
+						"description": "Associated with test case GC026"
+					},
+					"response": []
+				},
+				{
+					"name": "GEOMETRIC_CENTER",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}?latlng=48.8546,2.3477100000000064&key={{key}}&location_type=GEOMETRIC_CENTER",
+							"host": [
+								"{{url}}"
+							],
+							"query": [
+								{
+									"key": "latlng",
+									"value": "48.8546,2.3477100000000064"
+								},
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "location_type",
+									"value": "GEOMETRIC_CENTER"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "APPROXIMATE",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}?latlng=48.8546,2.3477100000000064&key={{key}}&location_type=APPROXIMATE",
+							"host": [
+								"{{url}}"
+							],
+							"query": [
+								{
+									"key": "latlng",
+									"value": "48.8546,2.3477100000000064"
+								},
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "location_type",
+									"value": "APPROXIMATE"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "result type and location type",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}?latlng=48.8546,2.3477100000000064&key={{key}}&result_type=neighborhood&location_type=APPROXIMATE",
+							"host": [
+								"{{url}}"
+							],
+							"query": [
+								{
+									"key": "latlng",
+									"value": "48.8546,2.3477100000000064"
+								},
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "result_type",
+									"value": "neighborhood"
+								},
+								{
+									"key": "location_type",
+									"value": "APPROXIMATE"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "result_type and the location_type(do not match)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}?latlng=48.8546,2.3477100000000064&key={{key}}&result_type=park&location_type=APPROXIMATE",
+							"host": [
+								"{{url}}"
+							],
+							"query": [
+								{
+									"key": "latlng",
+									"value": "48.8546,2.3477100000000064"
+								},
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "result_type",
+									"value": "park"
+								},
+								{
+									"key": "location_type",
+									"value": "APPROXIMATE"
+								}
+							]
+						},
+						"description": "If none of the filter values are acceptable, the API returns ZERO_RESULTS."
+					},
+					"response": []
+				},
+				{
+					"name": "Latlng request (missing API key and latlng)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}?latlng=&key=",
+							"host": [
+								"{{url}}"
+							],
+							"query": [
+								{
+									"key": "latlng",
+									"value": ""
+								},
+								{
+									"key": "key",
+									"value": ""
+								}
+							]
+						},
+						"description": "Associated with test case GC031"
+					},
+					"response": []
+				}
+			],
+			"description": "Associated with test case GC013.",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "32bcc39a-b202-44ac-a7aa-69198990d4ff",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "1ae0bd71-ebae-4150-afe2-af694c5056de",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Smoke tests",
+			"item": [
+				{
+					"name": "Smoke test (GC001)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "592508f8-3f6e-4a4f-88a7-6467fa8a9893",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Response time is less than 800ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(800);",
+									"});",
+									"",
+									"pm.test(\"Smoke test\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.status).to.eql(\"OK\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://maps.googleapis.com/maps/api/geocode/json?address=Milana Preloga 12A, Bosmal City Center, 71000 Sarajevo&key=AIzaSyAduI45QgLRByWTZmDmiaa-uc7wT6skMDo",
+							"protocol": "https",
+							"host": [
+								"maps",
+								"googleapis",
+								"com"
+							],
+							"path": [
+								"maps",
+								"api",
+								"geocode",
+								"json"
+							],
+							"query": [
+								{
+									"key": "address",
+									"value": "Milana Preloga 12A, Bosmal City Center, 71000 Sarajevo"
+								},
+								{
+									"key": "key",
+									"value": "AIzaSyAduI45QgLRByWTZmDmiaa-uc7wT6skMDo"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Smoke test (GC006)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "405d82fb-35c3-458e-9dca-42270e4fe7f4",
+								"exec": [
+									"pm.test(\"Content-Type is present\", function () {",
+									"    pm.response.to.have.header(\"Content-Length\");",
+									"});",
+									"",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://maps.googleapis.com/maps/api/geocode/json?components=country:GB&key={{key}}",
+							"protocol": "https",
+							"host": [
+								"maps",
+								"googleapis",
+								"com"
+							],
+							"path": [
+								"maps",
+								"api",
+								"geocode",
+								"json"
+							],
+							"query": [
+								{
+									"key": "components",
+									"value": "country:GB"
+								},
+								{
+									"key": "key",
+									"value": "{{key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Smoke test (GC013)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "156287cc-f583-4415-b150-151d8b3d2434",
+								"exec": [
+									"pm.test(\"Your test name\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.plus_code.compound_code).to.eql(\"V92P+QM Sarajevo, Bosnia and Herzegovina\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}?latlng=43.8519774,18.3866868&key={{key}}",
+							"host": [
+								"{{url}}"
+							],
+							"query": [
+								{
+									"key": "latlng",
+									"value": "43.8519774,18.3866868"
+								},
+								{
+									"key": "key",
+									"value": "{{key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Smoke test (GC016)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "a6a7d079-bfa7-4566-a8a1-2ac468d82a7c",
+								"exec": [
+									"pm.test(\"Response time is less than 100ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(100);",
+									"});",
+									"",
+									"pm.test(\"Your test name\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.plus_code.global_code).to.eql(\"8FMWV92P+QM\");",
+									"",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://maps.googleapis.com/maps/api/geocode/json?latlng=43.8519774,18.3866868&result_type=route&key={{key}}",
+							"protocol": "https",
+							"host": [
+								"maps",
+								"googleapis",
+								"com"
+							],
+							"path": [
+								"maps",
+								"api",
+								"geocode",
+								"json"
+							],
+							"query": [
+								{
+									"key": "latlng",
+									"value": "43.8519774,18.3866868"
+								},
+								{
+									"key": "result_type",
+									"value": "route"
+								},
+								{
+									"key": "key",
+									"value": "{{key}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Smoke test (GS031)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "059a4a3e-82a8-4514-a76e-1aaa24a1318f",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Smoke test\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.results).to.eql([]);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}?latlng=&key=",
+							"host": [
+								"{{url}}"
+							],
+							"query": [
+								{
+									"key": "latlng",
+									"value": ""
+								},
+								{
+									"key": "key",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
